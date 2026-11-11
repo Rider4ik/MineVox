@@ -1,0 +1,292 @@
+
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24
+    },
+    "configurePresets": [
+        {
+            "name": "base",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD_REQUIRED": true,
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_EXPORT_COMPILE_COMMANDS": true
+            }
+        },
+
+        {
+            "name": "clang",
+            "displayName": "Clang",
+            "inherits": "base",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/clang"
+        },
+        {
+            "name": "gcc",
+            "displayName": "GCC",
+            "inherits": "base",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/gcc",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "msvc",
+            "displayName": "MSVC",
+            "inherits": "base",
+            "generator": "Visual Studio 17 2022",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/msvc"
+        },
+        {
+            "name": "mingw",
+            "displayName": "MinGW GCC",
+            "inherits": "base",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/mingw",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+
+        {
+            "name": "clang-14",
+            "inherits": "clang",
+            "displayName": "Clang C++14",
+            "binaryDir": "${sourceDir}/build/clang/14",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "14",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "clang-17",
+            "inherits": "clang",
+            "displayName": "Clang C++17",
+            "binaryDir": "${sourceDir}/build/clang/17",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "clang-20",
+            "inherits": "clang",
+            "displayName": "Clang C++20",
+            "binaryDir": "${sourceDir}/build/clang/20",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "20",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "clang-23",
+            "inherits": "clang",
+            "displayName": "Clang C++23",
+            "binaryDir": "${sourceDir}/build/clang/23",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+
+        {
+            "name": "gcc-14",
+            "inherits": "gcc",
+            "displayName": "GCC C++14",
+            "binaryDir": "${sourceDir}/build/gcc/14",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "14",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "gcc-17",
+            "inherits": "gcc",
+            "displayName": "GCC C++17",
+            "binaryDir": "${sourceDir}/build/gcc/17",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "gcc-20",
+            "inherits": "gcc",
+            "displayName": "GCC C++20",
+            "binaryDir": "${sourceDir}/build/gcc/20",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "20",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "gcc-23",
+            "inherits": "gcc",
+            "displayName": "GCC C++23",
+            "binaryDir": "${sourceDir}/build/gcc/23",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+
+        {
+            "name": "msvc-14",
+            "inherits": "msvc",
+            "displayName": "MSVC C++14",
+            "binaryDir": "${sourceDir}/build/msvc/14",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "14"
+            }
+        },
+        {
+            "name": "msvc-17",
+            "inherits": "msvc",
+            "displayName": "MSVC C++17",
+            "binaryDir": "${sourceDir}/build/msvc/17",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17"
+            }
+        },
+        {
+            "name": "msvc-20",
+            "inherits": "msvc",
+            "displayName": "MSVC C++20",
+            "binaryDir": "${sourceDir}/build/msvc/20",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "20"
+            }
+        },
+        {
+            "name": "msvc-23",
+            "inherits": "msvc",
+            "displayName": "MSVC C++23",
+            "binaryDir": "${sourceDir}/build/msvc/23",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "23"
+            }
+        },
+
+        {
+            "name": "mingw-14",
+            "inherits": "mingw",
+            "displayName": "MinGW C++14",
+            "binaryDir": "${sourceDir}/build/mingw/14",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "14",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "mingw-17",
+            "inherits": "mingw",
+            "displayName": "MinGW C++17",
+            "binaryDir": "${sourceDir}/build/mingw/17",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "mingw-20",
+            "inherits": "mingw",
+            "displayName": "MinGW C++20",
+            "binaryDir": "${sourceDir}/build/mingw/20",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "20",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "mingw-23",
+            "inherits": "mingw",
+            "displayName": "MinGW C++23",
+            "binaryDir": "${sourceDir}/build/mingw/23",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "23",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+
+    "buildPresets": [
+        {
+            "name": "clang-14",
+            "configurePreset": "clang-14"
+        },
+        {
+            "name": "clang-17",
+            "configurePreset": "clang-17"
+        },
+        {
+            "name": "clang-20",
+            "configurePreset": "clang-20"
+        },
+        {
+            "name": "clang-23",
+            "configurePreset": "clang-23"
+        },
+        {
+            "name": "gcc-14",
+            "configurePreset": "gcc-14"
+        },
+        {
+            "name": "gcc-17",
+            "configurePreset": "gcc-17"
+        },
+        {
+            "name": "gcc-20",
+            "configurePreset": "gcc-20"
+        },
+        {
+            "name": "gcc-23",
+            "configurePreset": "gcc-23"
+        },
+        {
+            "name": "msvc-14",
+            "configurePreset": "msvc-14",
+            "configuration": "Debug"
+        },
+        {
+            "name": "msvc-17",
+            "configurePreset": "msvc-17",
+            "configuration": "Debug"
+        },
+        {
+            "name": "msvc-20",
+            "configurePreset": "msvc-20",
+            "configuration": "Debug"
+        },
+        {
+            "name": "msvc-23",
+            "configurePreset": "msvc-23",
+            "configuration": "Debug"
+        },
+        {
+            "name": "mingw-14",
+            "configurePreset": "mingw-14"
+        },
+        {
+            "name": "mingw-17",
+            "configurePreset": "mingw-17"
+        },
+        {
+            "name": "mingw-20",
+            "configurePreset": "mingw-20"
+        },
+        {
+            "name": "mingw-23",
+            "configurePreset": "mingw-23"
+        }
+    ]
+}
+
+
+
+
